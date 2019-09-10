@@ -51,6 +51,8 @@ module RailsERD
       NODE_WIDTH = 130 # @private :nodoc:
 
       FONTS = Config.font_names_based_on_os
+      
+      ENTITY_BGCOLORS = Config.entity_bgcolors
 
       # Default graph attributes.
       GRAPH_ATTRIBUTES = {
