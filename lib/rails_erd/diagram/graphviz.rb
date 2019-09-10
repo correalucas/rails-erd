@@ -94,7 +94,6 @@ module RailsERD
       module Simple
         def entity_style(entity, attributes)
           {}.tap do |options|
-            p options
             options[:fontcolor] = options[:color] = :grey60 if entity.virtual?
           end
         end
@@ -197,6 +196,8 @@ module RailsERD
 
         # Style of splines
         graph[:splines] = options.splines unless options.splines.nil?
+        
+        p options
 
         # Setup notation options.
         extend self.class.const_get(options.notation.to_s.capitalize.to_sym)
