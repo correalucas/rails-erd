@@ -196,8 +196,6 @@ module RailsERD
 
         # Style of splines
         graph[:splines] = options.splines unless options.splines.nil?
-        
-        p options
 
         # Setup notation options.
         extend self.class.const_get(options.notation.to_s.capitalize.to_sym)
