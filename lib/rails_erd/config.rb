@@ -24,11 +24,6 @@ module RailsERD
       end
       @options
     end
-    
-    def self.entity_bgcolors 
-      p @options
-      p self
-    end
 
     def self.font_names_based_on_os
       if use_os_x_fonts?
