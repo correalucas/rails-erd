@@ -34,22 +34,8 @@ namespace :erd do
     say "Loading application environment..."
     Rake::Task[:environment].invoke
 
-    say "Loading code in search of Active Record models..."
-    begin
-      Rails.application.eager_load!
-
-      if Rails.application.respond_to?(:config) && !Rails.application.config.nil?
-        Rails.application.config.eager_load_namespaces.each(&:eager_load!) if Rails.application.config.respond_to?(:eager_load_namespaces)
-      end
-    rescue Exception => err
-      if Rake.application.options.trace
-        raise
-      else
-        trace = Rails.backtrace_cleaner.clean(err.backtrace)
-        error = (["Loading models failed!\nError occurred while loading application: #{err} (#{err.class})"] + trace).join("\n    ")
-        raise error
-      end
-    end
+    say "Zeitwerk Loading code in search of Active Record models..."
+    Zeitwerk::Loader.eager_load_all
 
     raise "Active Record was not loaded." unless defined? ActiveRecord
   end
