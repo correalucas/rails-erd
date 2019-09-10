@@ -22,7 +22,6 @@ module RailsERD
         extra_config_path = File.expand_path(extra_config_file, Dir.pwd)
         load_file(extra_config_path) if File.exist?(extra_config_path)
       end
-      p @options
       @options
     end
 
