@@ -281,6 +281,11 @@ module RailsERD
         else options.title
         end
       end
+          
+      def bgcolor(entity)
+        entity_bgcolors = options[:entity_bgcolors]&.select {|k, v| v.include?(entity) }
+        entity_bgcolors&.keys&.first&.to_s || 'white'
+      end
 
       # Returns the file name that will be used when saving the diagram.
       def filename
