@@ -64,6 +64,12 @@ only_recursion_depth: null
 prepend_primary: false
 cluster: false
 splines: spline
+entity_bgcolors: 
+  gray: 
+    - Organization
+  yellow: 
+    - FormFieldValue
+    - Signup    
 ```
 
 Auto generation
